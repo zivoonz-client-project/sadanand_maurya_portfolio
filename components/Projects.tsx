@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import TiltCard from "./TiltCard";
 import { projects, type Project } from "@/lib/data";
 
 // Free auto-generated homepage screenshot from WordPress mShots.
@@ -25,7 +26,8 @@ function ModeBadge({ mode, label }: { mode: Project["mode"]; label: string }) {
 
 function ProjectCard({ p }: { p: Project }) {
   return (
-    <article className="card card-hover group relative flex h-full flex-col overflow-hidden">
+    <TiltCard className="h-full" max={7}>
+    <article className="card card-glow group relative flex h-full flex-col overflow-hidden">
       <div className={`absolute inset-x-0 top-0 z-20 h-1 bg-gradient-to-r ${p.accent}`} />
 
       {/* App icon banner (Play Store apps) */}
@@ -168,6 +170,7 @@ function ProjectCard({ p }: { p: Project }) {
       )}
       </div>
     </article>
+    </TiltCard>
   );
 }
 

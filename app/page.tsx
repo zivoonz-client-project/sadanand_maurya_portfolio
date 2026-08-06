@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
+import TiltCard from "@/components/TiltCard";
+import SectionHeading from "@/components/SectionHeading";
 import TechMarquee from "@/components/TechMarquee";
 import Services from "@/components/Services";
+import AiEdge from "@/components/AiEdge";
 import Process from "@/components/Process";
-import ReviewsPreview from "@/components/ReviewsPreview";
-import Faq from "@/components/Faq";
 
 const explore = [
   {
@@ -40,27 +41,24 @@ export default function Home() {
       <Hero />
       <TechMarquee />
       <Services />
+      <AiEdge />
       <Process />
 
       <section className="pb-24">
         <div className="container-x">
-          <Reveal>
-            <h2 className="section-title">
-              Explore my <span className="gradient-text">portfolio</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-muted">
-              Each section has its own page — jump straight to what you need.
-            </p>
-          </Reveal>
+          <SectionHeading eyebrow="Navigate" title={<>Explore my <span className="gradient-text">portfolio</span></>}>
+            Each section has its own page — jump straight to what you need.
+          </SectionHeading>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {explore.map((e, i) => (
-              <Reveal key={e.href} delay={i * 0.05}>
+              <Reveal key={e.href} delay={i * 0.05} direction="scale">
+                <TiltCard className="h-full">
                 <Link
                   href={e.href}
-                  className="card card-hover group flex h-full flex-col gap-3 p-6"
+                  className="card card-glow group flex h-full flex-col gap-3 p-6"
                 >
-                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-surface text-2xl">
+                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-surface text-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
                     {e.icon}
                   </span>
                   <div>
@@ -73,14 +71,12 @@ export default function Home() {
                     <p className="mt-1 text-sm text-muted">{e.desc}</p>
                   </div>
                 </Link>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
-
-      <ReviewsPreview />
-      <Faq />
     </>
   );
 }

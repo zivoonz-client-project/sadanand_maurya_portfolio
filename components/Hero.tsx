@@ -3,6 +3,19 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { profile, stats, trustBadges } from "@/lib/data";
+import Magnetic from "./Magnetic";
+import RoleRotator from "./RoleRotator";
+import CountUp from "./CountUp";
+import TypingHeadline from "./TypingHeadline";
+
+const fade = {
+  hidden: { opacity: 0, y: 20 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
 
 export default function Hero() {
   return (
@@ -12,13 +25,14 @@ export default function Hero() {
     >
       <div className="container-x">
         <div className="max-w-3xl">
-          {/* Left */}
+          {/* Content */}
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-muted"
+              custom={0}
+              variants={fade}
+              initial="hidden"
+              animate="show"
+              className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-surface/80 px-4 py-1.5 text-sm text-muted backdrop-blur"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -27,59 +41,65 @@ export default function Hero() {
               Available for freelance & full-time work
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className="text-[2rem] font-extrabold leading-[1.1] tracking-tight sm:text-6xl"
+            <TypingHeadline
+              plain={["Hi,", "I'm"]}
+              accent={profile.name.split(" ")}
+            />
+
+            <motion.div
+              custom={2}
+              variants={fade}
+              initial="hidden"
+              animate="show"
+              className="mt-4 flex min-h-[1.6em] items-end text-lg font-bold sm:text-3xl"
             >
-              Hi, I&apos;m <span className="gradient-text">{profile.name}</span>
-            </motion.h1>
+              <RoleRotator roles={profile.roles} />
+            </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-4 text-lg font-medium text-white/90 sm:text-2xl"
-            >
-              {profile.roles.join("  ·  ")}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
+              custom={3}
+              variants={fade}
+              initial="hidden"
+              animate="show"
               className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
             >
               {profile.tagline}
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              custom={4}
+              variants={fade}
+              initial="hidden"
+              animate="show"
               className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
             >
-              <Link href="/projects" className="btn-primary w-full sm:w-auto">
-                View My Work
-              </Link>
-              <Link href="/contact" className="btn-ghost w-full sm:w-auto">
-                Get in Touch
-              </Link>
-              <a
-                href={profile.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost w-full sm:w-auto"
-              >
-                GitHub
-              </a>
+              <Magnetic>
+                <Link href="/projects" className="btn-primary w-full sm:w-auto">
+                  View My Work
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <Link href="/contact" className="btn-ghost w-full sm:w-auto">
+                  Get in Touch
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href={profile.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost w-full sm:w-auto"
+                >
+                  GitHub
+                </a>
+              </Magnetic>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.22 }}
+              custom={5}
+              variants={fade}
+              initial="hidden"
+              animate="show"
               className="mt-6 flex flex-wrap gap-2.5"
             >
               {trustBadges.map((b) => (
@@ -91,15 +111,16 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
+              custom={6}
+              variants={fade}
+              initial="hidden"
+              animate="show"
               className="mt-10 grid max-w-lg grid-cols-2 gap-4 sm:grid-cols-4"
             >
               {stats.map((s) => (
                 <div key={s.label}>
-                  <div className="text-2xl font-bold gradient-text sm:text-3xl">
-                    {s.value}
+                  <div className="gradient-text text-2xl font-bold sm:text-3xl">
+                    <CountUp value={s.value} />
                   </div>
                   <div className="mt-1 text-xs text-muted sm:text-sm">
                     {s.label}

@@ -1,29 +1,26 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
+import TiltCard from "./TiltCard";
+import SectionHeading from "./SectionHeading";
 import { services } from "@/lib/data";
 
 export default function Services() {
   return (
     <section id="services" className="pt-24 pb-16 sm:pt-32 sm:pb-24">
       <div className="container-x">
-        <Reveal>
-          <p className="eyebrow">What I Offer</p>
-          <h2 className="section-title mt-2">
-            Services I <span className="gradient-text">provide</span>
-          </h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            Whether you need a mobile app, a website, a backend or a complete
-            product — I take your idea from concept to a launched, production-ready
-            solution.
-          </p>
-        </Reveal>
+        <SectionHeading eyebrow="What I Offer" title={<>Services I <span className="gradient-text">provide</span></>}>
+          Whether you need a mobile app, a website, a backend or a complete
+          product — I take your idea from concept to a launched, production-ready
+          solution.
+        </SectionHeading>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {services.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.05}>
-              <div className="card card-hover group h-full p-7">
+            <Reveal key={s.title} delay={i * 0.08} direction="flip">
+              <TiltCard className="h-full">
+              <div className="card card-glow group h-full p-7">
                 <div className="flex items-start gap-4">
-                  <span className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-500 text-2xl shadow-lg shadow-indigo-500/20">
+                  <span className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-500 text-2xl shadow-lg shadow-indigo-500/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     {s.icon}
                   </span>
                   <div>
@@ -54,6 +51,7 @@ export default function Services() {
                   ))}
                 </ul>
               </div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

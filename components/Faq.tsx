@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 import { faqs } from "@/lib/data";
 
 export default function Faq() {
@@ -11,21 +12,15 @@ export default function Faq() {
   return (
     <section className="pb-20 sm:pb-24">
       <div className="container-x">
-        <Reveal>
-          <p className="eyebrow">FAQ</p>
-          <h2 className="section-title mt-2">
-            Questions clients <span className="gradient-text">ask</span>
-          </h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            Everything you need to know before we start working together.
-          </p>
-        </Reveal>
+        <SectionHeading eyebrow="FAQ" title={<>Questions clients <span className="gradient-text">ask</span></>} align="center">
+          Everything you need to know before we start working together.
+        </SectionHeading>
 
         <div className="mx-auto mt-10 max-w-3xl space-y-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
-              <Reveal key={f.q} delay={i * 0.03}>
+              <Reveal key={f.q} delay={i * 0.04} direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="card overflow-hidden">
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}

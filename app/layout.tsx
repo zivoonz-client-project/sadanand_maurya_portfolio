@@ -4,6 +4,8 @@ import "./globals.css";
 import { profile } from "@/lib/data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SceneBackground from "@/components/SceneBackground";
+import IntroLoader from "@/components/IntroLoader";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -41,6 +43,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
+        <IntroLoader />
+        <SceneBackground />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
