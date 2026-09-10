@@ -75,17 +75,17 @@ const groups: { title: string; items: Tech[] }[] = [
 
 function Logo({ t }: { t: Tech }) {
   return (
-    <div className="tech-chip group flex items-center gap-2.5 rounded-xl border border-border bg-card/50 px-3.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-card">
+    <div className="tech-chip group flex items-center gap-2.5 rounded-xl border border-border bg-white shadow-sm px-3.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md">
       <svg
         viewBox="0 0 24 24"
-        className="h-5 w-5 flex-none text-white/50 transition-colors duration-300 group-hover:[color:var(--brand)]"
+        className="h-5 w-5 flex-none text-slate-400 transition-colors duration-300 group-hover:[color:var(--brand)]"
         style={{ ["--brand" as string]: t.color }}
         fill="currentColor"
         aria-hidden
       >
         <path d={t.path} />
       </svg>
-      <span className="text-sm font-medium text-white/70 transition-colors group-hover:text-white">
+      <span className="text-sm font-medium text-slate-700 transition-colors group-hover:text-blue-600">
         {t.name}
       </span>
     </div>
@@ -108,7 +108,7 @@ export default function TechMarquee() {
           {groups.map((g) => (
             <div
               key={g.title}
-              className="rounded-2xl border border-border bg-surface/30 p-5"
+              className="rounded-2xl border border-border bg-white/70 p-5 shadow-sm backdrop-blur-sm"
             >
               <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-accent2">
                 {g.title}

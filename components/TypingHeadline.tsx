@@ -49,7 +49,7 @@ export default function TypingHeadline({
       aria-label={full.trim()}
       className="min-h-[2.4em] text-[2rem] font-extrabold leading-[1.1] tracking-tight sm:min-h-[1.2em] sm:text-6xl"
     >
-      <span className="whitespace-pre-wrap text-white">{plainShown}</span>
+      <span className="whitespace-pre-wrap text-slate-900">{plainShown}</span>
       <span className="gradient-text text-glow whitespace-pre-wrap">
         {accentShown}
       </span>

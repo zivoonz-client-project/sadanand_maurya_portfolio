@@ -22,7 +22,7 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "4+", label: "Major Projects" },
+  { value: "5+", label: "Major Projects" },
   { value: "10+", label: "Technologies" },
   { value: "2", label: "Apps on Play Store" },
   { value: "100%", label: "Client Focused" },
@@ -293,6 +293,7 @@ export type Project = {
   // "solo" = built independently by me. "team" = built with the Tryeno team.
   mode: "solo" | "team";
   roleLabel: string;
+  status?: "live" | "upcoming";
 };
 
 export const projects: Project[] = [
@@ -385,6 +386,26 @@ export const projects: Project[] = [
     roleLabel: "With Tryeno team",
   },
   {
+    name: "UdharKhata",
+    category: "Mobile · Digital Khata & Ledger (Live)",
+    description:
+      "A smart digital ledger & payment reminder app for small businesses, shopkeepers and merchants to track credit (udhar), record transactions, and send one-tap WhatsApp payment reminders.",
+    highlights: [
+      "Live on Google Play Store",
+      "Credit & payment tracking (To Receive / To Pay)",
+      "One-tap WhatsApp payment reminders",
+      "Cloud backup via Firebase with offline sync",
+    ],
+    tech: ["Flutter", "Firebase", "Dart", "Google Play"],
+    accent: "from-blue-500 to-indigo-500",
+    link: "https://play.google.com/store/apps/details?id=com.tryeno.udharbook",
+    linkLabel: "View on Play Store",
+    image: "/udharkhata-icon.png",
+    featured: true,
+    mode: "team",
+    roleLabel: "With Tryeno team",
+  },
+  {
     name: "Fiscora",
     category: "Web · Marketing Site (Live)",
     description:
@@ -401,6 +422,24 @@ export const projects: Project[] = [
     featured: true,
     mode: "solo",
     roleLabel: "Designed & built solo",
+  },
+  {
+    name: "MyDigi",
+    category: "Mobile · Asset & Warranty Manager (Upcoming)",
+    description:
+      "All-in-one Smart Product, Warranty, Expense, Service & Invoice Vault mobile application with AI Invoice OCR camera scanning. Launching soon exclusively on the Google Play Store.",
+    highlights: [
+      "AI Invoice OCR camera scanner",
+      "7-day urgent warranty expiry alerts",
+      "Total Cost of Ownership (TCO) & QR Passports",
+      "Encrypted invoice & warranty vault",
+    ],
+    tech: ["Flutter", "Dart", "Material 3", "AI OCR", "Google Play"],
+    accent: "from-indigo-500 to-cyan-500",
+    featured: true,
+    mode: "solo",
+    roleLabel: "Built Solo · Launching Soon",
+    status: "upcoming",
   },
 ];
 

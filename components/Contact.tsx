@@ -38,28 +38,28 @@ const contactItems = [
     action: "Send me an email",
     href: `mailto:${profile.email}`,
     icon: icons.email,
-    tint: "text-indigo-300",
+    tint: "text-indigo-600",
   },
   {
     label: "Phone / WhatsApp",
     action: "Chat on WhatsApp",
     href: `https://wa.me/${profile.phone.replace(/\D/g, "")}`,
     icon: icons.whatsapp,
-    tint: "text-emerald-400",
+    tint: "text-emerald-600",
   },
   {
     label: "LinkedIn",
     action: "View my profile",
     href: profile.links.linkedin,
     icon: icons.linkedin,
-    tint: "text-sky-400",
+    tint: "text-sky-600",
   },
   {
     label: "GitHub",
     action: "See my repositories",
     href: profile.links.github,
     icon: icons.github,
-    tint: "text-white",
+    tint: "text-slate-800",
   },
 ];
 
@@ -175,7 +175,7 @@ export default function Contact() {
           <Reveal direction="left">
             <form onSubmit={handleSubmit} className="card p-6 sm:p-7">
               <div className="flex items-center gap-3 border-b border-border pb-5">
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 text-white shadow-lg shadow-indigo-500/25">
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-5 w-5">
                     <path d="M4 4h16v12H5.2L4 17.2V4z" />
                     <path d="M8 9h8M8 12h5" />
@@ -313,7 +313,7 @@ export default function Contact() {
                       </svg>
                     </motion.span>
                     <div className="text-sm">
-                      <p className="font-semibold text-emerald-300">
+                      <p className="font-semibold text-emerald-700">
                         Your email is ready to send!
                       </p>
                       <p className="mt-0.5 text-muted">
@@ -396,11 +396,11 @@ export default function Contact() {
                           rel="noopener noreferrer"
                           aria-label={`${it.label} — ${it.action}`}
                           title={it.action}
-                          className={`glass group relative flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-indigo-500/20 ${it.tint}`}
+                          className={`glass group relative flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-indigo-500/10 ${it.tint}`}
                         >
                           {it.icon}
                           {/* hover tooltip */}
-                          <span className="pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-bg px-2.5 py-1 text-xs text-white opacity-0 shadow-lg transition-all duration-200 group-hover:-bottom-8 group-hover:opacity-100">
+                          <span className="pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-white px-2.5 py-1 text-xs text-slate-800 opacity-0 shadow-md transition-all duration-200 group-hover:-bottom-8 group-hover:opacity-100">
                             {it.label}
                           </span>
                         </a>
@@ -413,13 +413,13 @@ export default function Contact() {
               <motion.div
                 whileHover={{ rotateX: 4, rotateY: -4 }}
                 style={{ perspective: 800, transformStyle: "preserve-3d" }}
-                className="card card-glow flex-1 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 p-6">
+                className="card card-glow flex-1 bg-gradient-to-br from-blue-50/90 via-sky-50/70 to-amber-50/50 border border-blue-100 p-6 shadow-sm">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2.5 w-2.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600" />
                   </span>
-                  <span className="font-medium text-emerald-400">
+                  <span className="font-medium text-emerald-700">
                     Available for new projects
                   </span>
                 </div>
@@ -448,10 +448,10 @@ export default function Contact() {
             {nextSteps.map((s, i) => (
               <Reveal key={s.no} delay={i * 0.1} direction="flip">
                 <div className="card card-glow group relative h-full overflow-hidden p-6">
-                  <span className="pointer-events-none absolute -right-2 -top-4 text-7xl font-black text-white/[0.04] transition-colors duration-300 group-hover:text-white/[0.07]">
+                  <span className="pointer-events-none absolute -right-2 -top-4 text-7xl font-black text-slate-900/[0.04] transition-colors duration-300 group-hover:text-slate-900/[0.08]">
                     {s.no}
                   </span>
-                  <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/30 to-cyan-500/20 text-sm font-bold text-accent2">
+                  <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-sky-100 text-sm font-bold text-blue-700">
                     {s.no}
                   </span>
                   <h4 className="relative mt-4 text-lg font-semibold">

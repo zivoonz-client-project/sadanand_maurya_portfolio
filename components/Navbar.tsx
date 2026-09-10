@@ -34,14 +34,14 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all ${
         scrolled
-          ? "border-b border-border bg-bg/80 backdrop-blur-md"
-          : "border-b border-transparent"
+          ? "border-b border-border bg-white/95 backdrop-blur-md shadow-sm"
+          : "border-b border-border/60 bg-[#faf8f5]/80 backdrop-blur-md"
       }`}
     >
       <nav className="container-x flex h-16 items-center justify-between">
         <Link href="/" className="text-lg font-bold tracking-tight">
           <span className="gradient-text">Sadanand</span>
-          <span className="text-white"> Maurya</span>
+          <span className="text-slate-900"> Maurya</span>
         </Link>
 
         <div className="hidden items-center gap-6 md:flex">
@@ -52,7 +52,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 className={`text-sm transition ${
-                  active ? "text-white" : "text-muted hover:text-white"
+                  active ? "text-blue-600 font-semibold" : "text-slate-600 hover:text-blue-600"
                 }`}
               >
                 {l.label}
@@ -67,21 +67,21 @@ export default function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-border md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-white md:hidden"
         >
           <div className="space-y-1.5">
             <span
-              className={`block h-0.5 w-5 bg-white transition ${
+              className={`block h-0.5 w-5 bg-slate-900 transition ${
                 open ? "translate-y-2 rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-0.5 w-5 bg-white transition ${
+              className={`block h-0.5 w-5 bg-slate-900 transition ${
                 open ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-0.5 w-5 bg-white transition ${
+              className={`block h-0.5 w-5 bg-slate-900 transition ${
                 open ? "-translate-y-2 -rotate-45" : ""
               }`}
             />
@@ -90,7 +90,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-bg/95 backdrop-blur-md md:hidden">
+        <div className="border-t border-border bg-white/95 backdrop-blur-md shadow-xl md:hidden">
           <div className="container-x flex flex-col py-3">
             {links.map((l) => {
               const active = pathname === l.href;
@@ -99,7 +99,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   className={`py-2.5 transition ${
-                    active ? "text-white" : "text-muted hover:text-white"
+                    active ? "text-slate-900 font-semibold" : "text-muted hover:text-slate-900"
                   }`}
                 >
                   {l.label}

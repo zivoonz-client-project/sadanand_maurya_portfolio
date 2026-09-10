@@ -95,7 +95,7 @@ export default function SceneBackground() {
           const d2 = dx * dx + dy * dy;
           if (d2 < 120 * 120) {
             const alpha = (1 - Math.sqrt(d2) / 120) * 0.16;
-            ctx.strokeStyle = `rgba(129, 140, 248, ${alpha})`;
+            ctx.strokeStyle = `rgba(37, 99, 235, ${alpha * 0.35})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.sx, a.sy);
@@ -110,7 +110,7 @@ export default function SceneBackground() {
         const radius = Math.max(0.2, p.r * scale);
         ctx.beginPath();
         ctx.arc(sx, sy, radius, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 90%, 72%, ${0.25 + scale * 0.6})`;
+        ctx.fillStyle = `hsla(${p.hue}, 80%, 52%, ${0.12 + scale * 0.3})`;
         ctx.fill();
       }
 
@@ -146,9 +146,9 @@ export default function SceneBackground() {
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
     >
       {/* Drifting aurora blobs behind the particle field */}
-      <div className="absolute -left-40 -top-40 h-[38rem] w-[38rem] rounded-full bg-indigo-600/20 blur-[120px] animate-aurora" />
-      <div className="absolute -right-40 top-1/3 h-[34rem] w-[34rem] rounded-full bg-cyan-500/15 blur-[120px] animate-aurora [animation-delay:-6s]" />
-      <div className="absolute bottom-[-12rem] left-1/3 h-[32rem] w-[32rem] rounded-full bg-violet-600/15 blur-[120px] animate-aurora [animation-delay:-12s]" />
+      <div className="absolute -left-40 -top-40 h-[38rem] w-[38rem] rounded-full bg-blue-500/10 blur-[120px] animate-aurora" />
+      <div className="absolute -right-40 top-1/3 h-[34rem] w-[34rem] rounded-full bg-sky-400/10 blur-[120px] animate-aurora [animation-delay:-6s]" />
+      <div className="absolute bottom-[-12rem] left-1/3 h-[32rem] w-[32rem] rounded-full bg-amber-200/25 blur-[120px] animate-aurora [animation-delay:-12s]" />
       <canvas ref={canvasRef} className="h-full w-full" />
     </div>
   );

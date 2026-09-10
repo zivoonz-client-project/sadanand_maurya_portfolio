@@ -18,11 +18,11 @@ export default function About() {
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>
             <div className="card h-full p-7">
-              <p className="text-lg leading-relaxed text-white/85">
+              <p className="text-lg leading-relaxed text-slate-800">
                 {profile.about}
               </p>
               <p className="mt-5 leading-relaxed text-muted">
-                <span className="font-medium text-white">Career objective — </span>
+                <span className="font-medium text-slate-900">Career objective — </span>
                 {profile.objective}
               </p>
 
@@ -32,7 +32,7 @@ export default function About() {
                 </h4>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {strengths.map((s) => (
-                    <span key={s} className="chip text-white/80">
+                    <span key={s} className="chip text-slate-700">
                       {s}
                     </span>
                   ))}

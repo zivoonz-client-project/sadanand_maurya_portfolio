@@ -24,7 +24,7 @@ export default function Skills() {
             <Reveal key={group.title} delay={i * 0.05}>
               <div className="card group h-full p-6 transition hover:border-accent/60">
                 <div className="mb-5 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-500 text-xl shadow-lg shadow-indigo-500/20">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-xl text-white shadow-md shadow-blue-500/20">
                     {group.icon}
                   </span>
                   <h3 className="text-lg font-semibold">{group.title}</h3>

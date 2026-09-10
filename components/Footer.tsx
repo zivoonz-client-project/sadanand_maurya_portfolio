@@ -12,7 +12,7 @@ export default function Footer() {
             href={profile.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-white"
+            className="transition hover:text-slate-900"
           >
             GitHub
           </a>
@@ -20,13 +20,13 @@ export default function Footer() {
             href={profile.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-white"
+            className="transition hover:text-slate-900"
           >
             LinkedIn
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="transition hover:text-white"
+            className="transition hover:text-slate-900"
           >
             Email
           </a>

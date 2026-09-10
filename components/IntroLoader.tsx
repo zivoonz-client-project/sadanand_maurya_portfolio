@@ -39,20 +39,20 @@ export default function IntroLoader() {
         >
           {/* Two panels that split apart to reveal the page */}
           <motion.div
-            className="absolute inset-y-0 left-0 w-1/2 bg-bg"
+            className="absolute inset-y-0 left-0 w-1/2 bg-[#faf8f5]"
             initial={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           />
           <motion.div
-            className="absolute inset-y-0 right-0 w-1/2 bg-bg"
+            className="absolute inset-y-0 right-0 w-1/2 bg-[#faf8f5]"
             initial={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           />
 
           {/* Ambient glow */}
-          <div className="pointer-events-none absolute h-96 w-96 rounded-full bg-indigo-600/20 blur-[120px]" />
+          <div className="pointer-events-none absolute h-96 w-96 rounded-full bg-blue-600/15 blur-[120px]" />
 
           {/* Center content fades out just before the panels split */}
           <motion.div
@@ -64,7 +64,7 @@ export default function IntroLoader() {
               initial={{ scale: 0.6, opacity: 0, rotateX: 40 }}
               animate={{ scale: 1, opacity: 1, rotateX: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 via-violet-500 to-cyan-400 text-3xl font-black text-white shadow-2xl shadow-indigo-500/40"
+              className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-sky-400 text-3xl font-black text-white shadow-xl shadow-blue-600/30"
               style={{ perspective: 600 }}
             >
               SM
@@ -76,7 +76,7 @@ export default function IntroLoader() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="mt-6 text-2xl font-extrabold tracking-tight sm:text-3xl"
             >
-              <span className="gradient-text">Sadanand</span> Maurya
+              <span className="gradient-text">Sadanand</span> <span className="text-slate-900">Maurya</span>
             </motion.h1>
 
             <motion.p
@@ -89,12 +89,12 @@ export default function IntroLoader() {
             </motion.p>
 
             {/* Loader bar */}
-            <div className="mt-6 h-1 w-40 overflow-hidden rounded-full bg-white/10">
+            <div className="mt-6 h-1 w-40 overflow-hidden rounded-full bg-[#e8e2d8]">
               <motion.div
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1.6, ease: "easeInOut" }}
-                className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400"
+                className="h-full rounded-full bg-gradient-to-r from-blue-600 to-sky-400"
               />
             </div>
           </motion.div>

@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
 import SectionHeading from "@/components/SectionHeading";
 import TechMarquee from "@/components/TechMarquee";
+import UpcomingLaunch from "@/components/UpcomingLaunch";
 import Services from "@/components/Services";
 import AiEdge from "@/components/AiEdge";
 import Process from "@/components/Process";
@@ -40,6 +41,7 @@ export default function Home() {
     <>
       <Hero />
       <TechMarquee />
+      <UpcomingLaunch />
       <Services />
       <AiEdge />
       <Process />
@@ -58,7 +60,7 @@ export default function Home() {
                   href={e.href}
                   className="card card-glow group flex h-full flex-col gap-3 p-6"
                 >
-                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-surface text-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
+                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-[#f4efe6] text-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
                     {e.icon}
                   </span>
                   <div>

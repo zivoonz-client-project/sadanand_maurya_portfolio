@@ -15,8 +15,8 @@ function ModeBadge({ mode, label }: { mode: Project["mode"]; label: string }) {
     <span
       className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${
         solo
-          ? "border-violet-500/30 bg-violet-500/10 text-violet-300"
-          : "border-cyan-500/30 bg-cyan-500/10 text-cyan-300"
+          ? "border-violet-500/30 bg-violet-50 text-violet-700"
+          : "border-cyan-500/30 bg-cyan-50 text-cyan-800"
       }`}
     >
       {solo ? "👤" : "🤝"} {label}
@@ -38,25 +38,37 @@ function ProjectCard({ p }: { p: Project }) {
           rel="noopener noreferrer"
           className={`relative flex aspect-[16/9] items-center justify-center overflow-hidden border-b border-border bg-gradient-to-br ${p.accent}`}
         >
-          <div className="absolute inset-0 bg-bg/70" />
+          {/* Ambient blurred backdrop so the card is completely filled */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={p.image}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover opacity-35 blur-2xl scale-125"
+            />
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
+          </div>
+
+          {/* Large prominent app icon */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={p.image}
             alt={`${p.name} app logo`}
             loading="lazy"
-            className="relative h-16 w-16 rounded-2xl shadow-2xl ring-1 ring-white/10 transition duration-500 group-hover:scale-105"
+            className="relative h-28 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40 rounded-2xl sm:rounded-3xl shadow-xl ring-1 ring-black/5 transition duration-500 group-hover:scale-105"
           />
-          <span className="absolute bottom-3 right-3 rounded-lg bg-black/60 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
+          <span className="absolute bottom-3 right-3 rounded-lg bg-white/95 border border-slate-200/80 px-2.5 py-1 text-xs font-semibold text-slate-800 shadow-sm backdrop-blur">
             ▶ Google Play
           </span>
         </a>
-      ) : p.link && p.mode === "solo" ? (
+      ) : p.link && p.mode === "solo" && p.status !== "upcoming" ? (
         /* Live website preview (solo websites only) */
         <a
           href={p.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative block aspect-[16/9] overflow-hidden border-b border-border bg-surface"
+          className="relative block aspect-[16/9] overflow-hidden border-b border-border bg-slate-50"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -65,8 +77,8 @@ function ProjectCard({ p }: { p: Project }) {
             loading="lazy"
             className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-transparent" />
-          <span className="absolute bottom-3 right-3 rounded-lg bg-black/60 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
+          <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent" />
+          <span className="absolute bottom-3 right-3 rounded-lg bg-white/95 border border-slate-200/80 px-2.5 py-1 text-xs font-semibold text-slate-800 shadow-sm backdrop-blur">
             Open live site ↗
           </span>
         </a>
@@ -75,19 +87,19 @@ function ProjectCard({ p }: { p: Project }) {
         <div
           className={`relative flex aspect-[16/9] items-center justify-center overflow-hidden border-b border-border bg-gradient-to-br ${p.accent}`}
         >
-          <div className="absolute inset-0 bg-bg/65" />
+          <div className="absolute inset-0 bg-white/70" />
           <div
             className="absolute inset-0 opacity-[0.15]"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                "radial-gradient(circle at 1px 1px, black 1px, transparent 0)",
               backgroundSize: "18px 18px",
             }}
           />
-          <span className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-2xl font-black text-white shadow-2xl ring-1 ring-white/15 backdrop-blur transition duration-500 group-hover:scale-105">
+          <span className={`relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${p.accent} text-2xl font-black text-white shadow-xl transition duration-500 group-hover:scale-105`}>
             {p.name.charAt(0)}
           </span>
-          <span className="absolute bottom-3 right-3 rounded-lg bg-black/50 px-2.5 py-1 text-xs font-medium text-white/90 backdrop-blur">
+          <span className="absolute bottom-3 right-3 rounded-lg bg-white/95 border border-slate-200/80 px-2.5 py-1 text-xs font-semibold text-slate-800 shadow-sm backdrop-blur">
             {p.category.split("·")[0].trim()}
           </span>
         </div>
@@ -102,17 +114,25 @@ function ProjectCard({ p }: { p: Project }) {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <h3 className="text-lg font-bold">{p.name}</h3>
-            {p.link && (
-              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            {p.status === "upcoming" ? (
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-50 px-2.5 py-0.5 text-[11px] font-semibold text-amber-700">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500" />
+                </span>
+                Coming Soon
+              </span>
+            ) : p.link ? (
+              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 Live
               </span>
-            )}
+            ) : null}
           </div>
           <p className="mt-0.5 text-xs text-accent2">{p.category}</p>
         </div>
         <span
-          className={`flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-gradient-to-br ${p.accent} text-sm font-bold`}
+          className={`flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-gradient-to-br ${p.accent} text-sm font-bold text-white shadow-sm`}
         >
           {p.name.charAt(0)}
         </span>
@@ -128,7 +148,7 @@ function ProjectCard({ p }: { p: Project }) {
 
       <ul className="relative mt-3 grid gap-1.5">
         {p.highlights.slice(0, 3).map((h) => (
-          <li key={h} className="flex items-center gap-2 text-[13px] text-white/80">
+          <li key={h} className="flex items-center gap-2 text-[13px] text-slate-700">
             <svg className="h-3.5 w-3.5 flex-none text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
               <path
                 fillRule="evenodd"
@@ -145,14 +165,23 @@ function ProjectCard({ p }: { p: Project }) {
         {p.tech.map((t) => (
           <span
             key={t}
-            className="rounded-md border border-border bg-surface px-2 py-0.5 text-[11px] text-muted"
+            className="rounded-md border border-border bg-[#faf8f5] px-2 py-0.5 text-[11px] text-slate-700"
           >
             {t}
           </span>
         ))}
       </div>
 
-      {p.link && (
+      {p.status === "upcoming" ? (
+        <div className="relative mt-4 border-t border-border pt-4">
+          <div className="flex items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 py-2.5 px-4 text-xs font-semibold text-emerald-700 shadow-sm">
+            <svg className="h-3.5 w-3.5 fill-current text-emerald-600" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.22-.988V2.802c0-.363.078-.7.22-.988zm11.242 11.243l2.257 2.256-11.89 6.865 9.633-9.121zm0-2.114L5.218 1.822l11.89 6.865-2.257 2.256zm1.485 1.057l3.654 2.11a1.238 1.238 0 0 1 0 2.146l-3.654 2.11-2.45-2.45 2.45-2.45z"/>
+            </svg>
+            <span>Launching Soon on Google Play</span>
+          </div>
+        </div>
+      ) : p.link ? (
         <div className="relative mt-4 border-t border-border pt-4">
           <a
             href={p.link}
@@ -167,7 +196,7 @@ function ProjectCard({ p }: { p: Project }) {
             </svg>
           </a>
         </div>
-      )}
+      ) : null}
       </div>
     </article>
     </TiltCard>

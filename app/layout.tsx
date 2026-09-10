@@ -41,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body>
+    <html lang="en" className={`${inter.variable} bg-[#faf8f5] text-slate-900`}>
+      <body className="bg-[#faf8f5] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
         <IntroLoader />
         <SceneBackground />
         <Navbar />

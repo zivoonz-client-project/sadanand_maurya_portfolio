@@ -20,7 +20,7 @@ export default function Services() {
               <TiltCard className="h-full">
               <div className="card card-glow group h-full p-7">
                 <div className="flex items-start gap-4">
-                  <span className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-500 text-2xl shadow-lg shadow-indigo-500/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <span className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-2xl text-white shadow-md shadow-blue-500/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     {s.icon}
                   </span>
                   <div>
@@ -33,7 +33,7 @@ export default function Services() {
                   {s.points.map((p) => (
                     <li
                       key={p}
-                      className="flex items-start gap-2.5 text-sm text-white/85"
+                      className="flex items-start gap-2.5 text-sm text-slate-700"
                     >
                       <svg
                         className="mt-0.5 h-4 w-4 flex-none text-accent2"
@@ -57,8 +57,8 @@ export default function Services() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 p-6">
-            <p className="text-lg font-medium">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50/90 via-sky-50/70 to-amber-50/50 p-6 shadow-sm">
+            <p className="text-lg font-medium text-slate-900">
               Have a project in mind?{" "}
               <span className="text-muted">Let&apos;s make it real.</span>
             </p>

@@ -69,11 +69,11 @@ export default function AiEdge() {
                 }}
                 className="glass flex flex-1 items-center gap-3 rounded-2xl px-5 py-4 sm:flex-none"
               >
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/30 to-cyan-500/20 text-xl">
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100/60 text-xl shadow-sm">
                   {p.icon}
                 </span>
                 <div>
-                  <div className="font-semibold leading-tight">{p.label}</div>
+                  <div className="font-semibold leading-tight text-slate-900">{p.label}</div>
                   <div className="text-xs text-muted">{p.sub}</div>
                 </div>
               </motion.div>
@@ -106,10 +106,10 @@ export default function AiEdge() {
             <Reveal key={f.title} delay={i * 0.08} direction="flip">
               <TiltCard className="h-full">
                 <div className="card card-glow group h-full p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface text-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4efe6] text-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
                     {f.icon}
                   </span>
-                  <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">
                     {f.desc}
                   </p>
@@ -121,8 +121,8 @@ export default function AiEdge() {
 
         {/* CTA */}
         <Reveal delay={0.1}>
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-gradient-to-r from-indigo-500/10 via-violet-500/10 to-cyan-500/10 p-6">
-            <p className="text-lg font-medium">
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50/90 via-sky-50/70 to-amber-50/50 p-6 shadow-sm">
+            <p className="text-lg font-medium text-slate-900">
               Have an idea?{" "}
               <span className="text-muted">
                 Let&apos;s build it fast with AI.
