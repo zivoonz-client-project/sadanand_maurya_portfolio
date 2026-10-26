@@ -27,11 +27,30 @@ export const metadata: Metadata = {
     title: `${profile.name} — Full Stack Software Engineer`,
     description: profile.tagline,
     type: "website",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: `${profile.name} SM Icon`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — Full Stack Software Engineer`,
     description: profile.tagline,
+    images: ["/icon.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/icon.png"],
   },
 };
 

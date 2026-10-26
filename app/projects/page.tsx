@@ -5,7 +5,7 @@ import CtaBand from "@/components/CtaBand";
 export const metadata: Metadata = {
   title: "Projects — Sadanand Maurya",
   description:
-    "Major projects — live client websites (Siddhivinayak Recovery, KP Industries, Fiscora) built solo, and mobile apps (ShopNest, BestInCity, JHATPAT, UdharKhata) built with the Tryeno team.",
+    "Major projects — Parva (Enterprise Fleet Management ecosystem), live client websites (Siddhivinayak Recovery, KP Industries, Fiscora) delivered as freelance client projects, and mobile apps (ShopNest, BestInCity, JHATPAT, UdharKhata) built with the Tryeno team.",
 };
 
 export default function Page() {

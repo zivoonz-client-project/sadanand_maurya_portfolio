@@ -29,18 +29,27 @@ export default function UpcomingLaunch() {
           <div className="lg:col-span-7">
             <Reveal>
               <div className="flex flex-wrap items-center gap-2.5">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700 shadow-sm">
+                <a
+                  href="https://mydigi.co.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 shadow-sm hover:bg-emerald-100 transition"
+                >
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                  Website Live (mydigi.co.in) ↗
+                </a>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-300 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 shadow-sm">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-500 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-600" />
                   </span>
-                  Coming Soon
+                  App in Closed Testing
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                  <svg className="h-3.5 w-3.5 fill-current text-emerald-600" viewBox="0 0 24 24">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700">
+                  <svg className="h-3.5 w-3.5 fill-current text-indigo-600" viewBox="0 0 24 24">
                     <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.22-.988V2.802c0-.363.078-.7.22-.988zm11.242 11.243l2.257 2.256-11.89 6.865 9.633-9.121zm0-2.114L5.218 1.822l11.89 6.865-2.257 2.256zm1.485 1.057l3.654 2.11a1.238 1.238 0 0 1 0 2.146l-3.654 2.11-2.45-2.45 2.45-2.45z"/>
                   </svg>
-                  Google Play Store
+                  Google Play (Testing)
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-indigo-200 bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700">
                   📱 Flutter &amp; Dart
@@ -103,23 +112,28 @@ export default function UpcomingLaunch() {
               </Reveal>
             </div>
 
-            {/* Launch CTA Bar - Google Play Exclusive, Coming Soon (No GitHub link) */}
+            {/* Launch CTA Bar */}
             <Reveal delay={0.25}>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <div className="inline-flex items-center gap-3 rounded-xl border border-emerald-300 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-700 shadow-sm">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600" />
-                  </span>
-                  <svg className="h-4 w-4 fill-current text-emerald-600" viewBox="0 0 24 24">
-                    <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.22-.988V2.802c0-.363.078-.7.22-.988zm11.242 11.243l2.257 2.256-11.89 6.865 9.633-9.121zm0-2.114L5.218 1.822l11.89 6.865-2.257 2.256zm1.485 1.057l3.654 2.11a1.238 1.238 0 0 1 0 2.146l-3.654 2.11-2.45-2.45 2.45-2.45z"/>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="https://mydigi.co.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center gap-2 px-5 py-3 text-sm shadow-md"
+                >
+                  <span>Visit Live Website (mydigi.co.in)</span>
+                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                   </svg>
-                  <span>Launching Soon on Google Play</span>
-                </div>
+                </a>
 
-                <div className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-4 py-3 text-xs font-medium text-slate-600 shadow-sm">
-                  <span className="h-2 w-2 rounded-full bg-cyan-500" />
-                  <span>Android Release · Beta Testing Phase</span>
+                <div className="inline-flex items-center gap-2 rounded-xl border border-sky-300 bg-sky-50 px-4 py-3 text-xs font-semibold text-sky-800 shadow-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-500 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-600" />
+                  </span>
+                  <span>Android App in Closed Testing</span>
                 </div>
               </div>
             </Reveal>
@@ -130,12 +144,12 @@ export default function UpcomingLaunch() {
             <Reveal delay={0.2}>
               <TiltCard max={7}>
                 {/* Smartphone Device Chassis */}
-                <div className="relative mx-auto max-w-[360px] rounded-[46px] border-[9px] border-slate-900 bg-slate-900 p-2.5 shadow-2xl shadow-slate-900/20 ring-1 ring-slate-900/40">
+                <div className="relative mx-auto w-full max-w-[310px] sm:max-w-[360px] rounded-[38px] sm:rounded-[46px] border-[6px] sm:border-[9px] border-slate-900 bg-slate-900 p-2 sm:p-2.5 shadow-2xl shadow-slate-900/20 ring-1 ring-slate-900/40">
                   {/* Left Volume Rocker */}
-                  <span className="absolute -left-[12px] top-24 h-12 w-[3px] rounded-l-md bg-slate-700" />
-                  <span className="absolute -left-[12px] top-40 h-12 w-[3px] rounded-l-md bg-slate-700" />
+                  <span className="absolute -left-[8px] sm:-left-[12px] top-24 h-12 w-[3px] rounded-l-md bg-slate-700 hidden sm:block" />
+                  <span className="absolute -left-[8px] sm:-left-[12px] top-40 h-12 w-[3px] rounded-l-md bg-slate-700 hidden sm:block" />
                   {/* Right Power Key */}
-                  <span className="absolute -right-[12px] top-32 h-14 w-[3px] rounded-r-md bg-slate-700" />
+                  <span className="absolute -right-[8px] sm:-right-[12px] top-32 h-14 w-[3px] rounded-r-md bg-slate-700 hidden sm:block" />
 
                   {/* Top Bezel Speaker & Punch-hole Camera */}
                   <div className="relative mb-1 flex items-center justify-between px-6 pt-1 text-[11px] font-semibold text-slate-800">

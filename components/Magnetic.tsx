@@ -17,6 +17,7 @@ export default function Magnetic({
   const y = useSpring(useMotionValue(0), { stiffness: 250, damping: 18 });
 
   const handleMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "touch") return;
     const rect = e.currentTarget.getBoundingClientRect();
     x.set((e.clientX - (rect.left + rect.width / 2)) * strength);
     y.set((e.clientY - (rect.top + rect.height / 2)) * strength);

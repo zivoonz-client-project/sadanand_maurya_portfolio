@@ -34,8 +34,8 @@ export default function Experience() {
                         <h3 className="text-xl font-semibold">{job.role}</h3>
                         <p className="text-accent2">{job.company}</p>
                       </div>
-                      <div className="flex flex-col items-end gap-2">
-                        <span className="chip whitespace-nowrap text-slate-700">
+                      <div className="flex flex-wrap sm:flex-col items-start sm:items-end gap-2">
+                        <span className="chip whitespace-nowrap text-slate-700 text-xs sm:text-sm">
                           {job.period}
                         </span>
                         <span className="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">

@@ -23,7 +23,7 @@ export default function IntroLoader() {
       sessionStorage.setItem("intro-seen", "1");
       setShow(false);
       document.body.style.overflow = "";
-    }, 2200);
+    }, 1400);
     return () => {
       clearTimeout(t);
       document.body.style.overflow = "";

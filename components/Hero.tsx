@@ -51,7 +51,7 @@ export default function Hero() {
               variants={fade}
               initial="hidden"
               animate="show"
-              className="mt-4 flex min-h-[1.6em] items-end text-lg font-bold sm:text-3xl"
+              className="mt-4 flex min-h-[1.6em] items-end text-lg sm:text-2xl md:text-3xl font-bold"
             >
               <RoleRotator roles={profile.roles} />
             </motion.div>
@@ -77,6 +77,18 @@ export default function Hero() {
                 <Link href="/projects" className="btn-primary w-full sm:w-auto">
                   View My Work
                 </Link>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href="/Sadanand_Maurya_Resume.pdf"
+                  download="Sadanand_Maurya_Resume.pdf"
+                  className="btn-ghost w-full sm:w-auto border-blue-600/30 bg-blue-50/70 text-blue-700 hover:bg-blue-100/80 hover:text-blue-900 transition flex items-center justify-center gap-2 font-semibold shadow-sm"
+                >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                  </svg>
+                  <span>Download Resume</span>
+                </a>
               </Magnetic>
               <Magnetic>
                 <Link href="/contact" className="btn-ghost w-full sm:w-auto">

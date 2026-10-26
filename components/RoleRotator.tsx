@@ -21,7 +21,7 @@ export default function RoleRotator({ roles }: { roles: string[] }) {
           animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
           exit={{ y: "-100%", opacity: 0, filter: "blur(6px)" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="gradient-text col-start-1 row-start-1 whitespace-nowrap"
+          className="gradient-text col-start-1 row-start-1 whitespace-nowrap overflow-hidden text-ellipsis max-w-[85vw] sm:max-w-none"
         >
           {roles[i]}
         </motion.span>

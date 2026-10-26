@@ -59,6 +59,16 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <a
+            href="/Sadanand_Maurya_Resume.pdf"
+            download="Sadanand_Maurya_Resume.pdf"
+            className="rounded-xl border border-slate-300 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-slate-700 shadow-sm hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 transition flex items-center gap-1.5"
+          >
+            <svg className="h-3.5 w-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            <span>Resume</span>
+          </a>
           <Link href="/contact" className="btn-primary px-4 py-2 text-sm">
             Hire Me
           </Link>
@@ -98,6 +108,7 @@ export default function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  onClick={() => setOpen(false)}
                   className={`py-2.5 transition ${
                     active ? "text-slate-900 font-semibold" : "text-muted hover:text-slate-900"
                   }`}
@@ -106,6 +117,26 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <div className="mt-3 pt-3 border-t border-border flex flex-col gap-2">
+              <a
+                href="/Sadanand_Maurya_Resume.pdf"
+                download="Sadanand_Maurya_Resume.pdf"
+                onClick={() => setOpen(false)}
+                className="btn-ghost py-2.5 text-center text-xs font-semibold flex items-center justify-center gap-2 border border-slate-300"
+              >
+                <svg className="h-4 w-4 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                <span>Download Resume</span>
+              </a>
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="btn-primary py-2.5 text-center text-xs"
+              >
+                Hire Me
+              </Link>
+            </div>
           </div>
         </div>
       )}

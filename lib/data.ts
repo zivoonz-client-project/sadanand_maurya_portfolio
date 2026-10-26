@@ -170,70 +170,130 @@ export const faqs: Faq[] = [
   },
 ];
 
+export type SkillItem = {
+  name: string;
+  level: number;
+  badge?: string;
+  accent?: string;
+};
+
 export type SkillGroup = {
+  id: string;
   title: string;
+  category: "all" | "mobile" | "frontend" | "backend" | "database" | "devops";
   icon: string;
-  skills: { name: string; level: number }[];
+  badge: string;
+  accent: string;
+  description: string;
+  projects?: string[];
+  skills: SkillItem[];
 };
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Frontend",
-    icon: "🎨",
-    skills: [
-      { name: "React.js", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "Tailwind CSS", level: 92 },
-    ],
-  },
-  {
-    title: "Mobile (Flutter)",
+    id: "mobile",
+    title: "Mobile (Flutter & Dart)",
+    category: "mobile",
     icon: "📱",
+    badge: "Flagship Expertise",
+    accent: "from-cyan-500 to-blue-600",
+    description:
+      "Cross-platform Android & iOS engineering with Riverpod, offline-first queues, and Google Play Store publishing.",
+    projects: ["Parva", "JHATPAT", "UdharKhata", "MyDigi"],
     skills: [
-      { name: "Flutter", level: 90 },
-      { name: "Dart", level: 88 },
-      { name: "Riverpod", level: 82 },
-      { name: "Firebase", level: 85 },
+      { name: "Flutter", level: 92, badge: "Expert", accent: "from-cyan-400 to-blue-500" },
+      { name: "Dart", level: 90, badge: "Expert", accent: "from-blue-500 to-indigo-500" },
+      { name: "Riverpod & State Management", level: 86, badge: "Advanced", accent: "from-sky-400 to-blue-600" },
+      { name: "Firebase & Offline Sync", level: 88, badge: "Advanced", accent: "from-amber-400 to-orange-500" },
+      { name: "Play Store Release & CI", level: 90, badge: "Expert", accent: "from-emerald-400 to-teal-500" },
     ],
   },
   {
-    title: "Backend",
+    id: "frontend",
+    title: "Frontend & Web",
+    category: "frontend",
+    icon: "🎨",
+    badge: "Modern & Responsive",
+    accent: "from-blue-600 to-indigo-600",
+    description:
+      "Modern web experiences built with React, Next.js App Router, Tailwind CSS, and SEO-friendly architectures.",
+    projects: ["Fiscora", "KP Industries", "Siddhivinayak", "MyDigi"],
+    skills: [
+      { name: "React.js", level: 92, badge: "Expert", accent: "from-cyan-400 to-blue-500" },
+      { name: "Next.js (App Router, SSR)", level: 88, badge: "Advanced", accent: "from-slate-700 to-slate-900" },
+      { name: "Tailwind CSS & Animations", level: 95, badge: "Master", accent: "from-sky-400 to-cyan-500" },
+      { name: "TypeScript & JavaScript", level: 88, badge: "Advanced", accent: "from-blue-600 to-indigo-600" },
+      { name: "Responsive UI & Core Web Vitals", level: 94, badge: "Expert", accent: "from-emerald-500 to-teal-500" },
+    ],
+  },
+  {
+    id: "backend",
+    title: "Backend & APIs",
+    category: "backend",
     icon: "⚙️",
+    badge: "Scalable & Secure",
+    accent: "from-rose-500 to-red-600",
+    description:
+      "Enterprise RESTful APIs, JWT/Sanctum authentication, push notifications, and merchant/customer workflows.",
+    projects: ["ShopNest", "BestInCity", "Parva"],
     skills: [
-      { name: "Laravel / PHP", level: 88 },
-      { name: "REST APIs", level: 90 },
-      { name: "Node.js", level: 78 },
-      { name: "JWT / Sanctum", level: 84 },
+      { name: "Laravel / PHP", level: 88, badge: "Advanced", accent: "from-rose-500 to-red-600" },
+      { name: "RESTful API Architecture", level: 92, badge: "Expert", accent: "from-indigo-500 to-blue-600" },
+      { name: "Node.js & Express", level: 80, badge: "Proficient", accent: "from-emerald-500 to-green-600" },
+      { name: "JWT / Sanctum Authentication", level: 86, badge: "Advanced", accent: "from-amber-500 to-orange-600" },
+      { name: "Push Notifications & Webhooks", level: 88, badge: "Advanced", accent: "from-violet-500 to-purple-600" },
     ],
   },
   {
-    title: "Database",
+    id: "database",
+    title: "Databases & Cloud",
+    category: "database",
     icon: "🗄️",
+    badge: "Data Integrity",
+    accent: "from-amber-500 to-orange-600",
+    description:
+      "Schema design, relational indexing, Firebase real-time synchronization, and local SQLite data queues.",
+    projects: ["ShopNest", "UdharKhata", "Parva"],
     skills: [
-      { name: "MySQL", level: 88 },
-      { name: "PostgreSQL", level: 80 },
-      { name: "Firebase Firestore", level: 85 },
+      { name: "MySQL", level: 88, badge: "Advanced", accent: "from-blue-500 to-sky-600" },
+      { name: "Firebase Firestore & Auth", level: 86, badge: "Advanced", accent: "from-amber-400 to-orange-500" },
+      { name: "PostgreSQL", level: 82, badge: "Proficient", accent: "from-indigo-500 to-blue-600" },
+      { name: "SQLite & Local Caching", level: 88, badge: "Advanced", accent: "from-teal-500 to-cyan-600" },
     ],
   },
   {
+    id: "devops",
     title: "DevOps & Launch",
+    category: "devops",
     icon: "🚀",
+    badge: "Production Ready",
+    accent: "from-emerald-500 to-teal-600",
+    description:
+      "Zero-downtime deployment pipelines, GoDaddy domain & DNS setup, Google Play Console, and Git workflows.",
+    projects: ["Google Play", "Vercel", "GoDaddy"],
     skills: [
-      { name: "Vercel Deployment", level: 88 },
-      { name: "GoDaddy Domain Setup", level: 90 },
-      { name: "Play Store Publishing", level: 88 },
-      { name: "Git / GitHub", level: 90 },
-      { name: "Postman", level: 85 },
+      { name: "Google Play Store Console", level: 90, badge: "Expert", accent: "from-emerald-500 to-teal-600" },
+      { name: "Vercel Deployments & CI/CD", level: 92, badge: "Expert", accent: "from-slate-800 to-black" },
+      { name: "GoDaddy DNS & Domain Setup", level: 92, badge: "Expert", accent: "from-emerald-600 to-teal-700" },
+      { name: "Git / GitHub Version Control", level: 90, badge: "Expert", accent: "from-orange-500 to-red-600" },
+      { name: "Postman API Testing", level: 88, badge: "Advanced", accent: "from-orange-400 to-amber-500" },
     ],
   },
   {
-    title: "Practices",
+    id: "practices",
+    title: "Architecture & Practices",
+    category: "all",
     icon: "✨",
+    badge: "Code Craftsmanship",
+    accent: "from-purple-600 to-violet-600",
+    description:
+      "Clean architecture, offline idempotency, payment gateway integration, and high testability standards.",
+    projects: ["Parva", "ShopNest", "MyDigi"],
     skills: [
-      { name: "Clean Architecture", level: 85 },
-      { name: "Responsive UI", level: 92 },
-      { name: "Payment Integration", level: 85 },
-      { name: "Authentication", level: 88 },
+      { name: "Clean Architecture Principles", level: 88, badge: "Advanced", accent: "from-violet-500 to-purple-600" },
+      { name: "Offline-First Sync Queues", level: 88, badge: "Advanced", accent: "from-cyan-500 to-blue-600" },
+      { name: "Payment Gateway Integration", level: 86, badge: "Advanced", accent: "from-emerald-500 to-teal-600" },
+      { name: "Role-Based Auth & Security", level: 88, badge: "Advanced", accent: "from-rose-500 to-pink-600" },
     ],
   },
 ];
@@ -264,18 +324,18 @@ export const experience: Experience[] = [
     tech: ["Flutter", "React", "Next.js", "Laravel", "Firebase"],
   },
   {
-    role: "Freelance Web Developer",
+    role: "Freelance Web & Mobile Developer",
     company: "Independent · Direct Clients",
     period: "2024 – Present",
     type: "Freelance",
     points: [
-      "Designed & built live client websites end-to-end (Siddhivinayak Recovery, KP Industries).",
-      "Owned the full delivery — UI/UX, development, testing and go-live.",
-      "Handled GoDaddy domain purchase, DNS and production deployment.",
-      "Published Android apps to the Google Play Store.",
-      "Direct client communication, requirements gathering and post-launch support.",
+      "Developing Parva — Enterprise Lorry Fleet Management mobile ecosystem with Flutter (Admin + Driver Terminal).",
+      "Designed & built live client websites end-to-end (Siddhivinayak Recovery, KP Industries, Fiscora).",
+      "Owned full project lifecycle: requirement gathering, UI/UX, responsive coding, domain/hosting and SEO.",
+      "Engineered offline-first mobile apps, real-time sync queues and local storage architecture.",
+      "Direct client communication, rigorous specification adherence, and Play Store publishing.",
     ],
-    tech: ["React", "Responsive UI", "SEO", "GoDaddy", "Play Store"],
+    tech: ["Flutter", "Dart", "React", "Next.js", "Offline-First", "Play Store"],
   },
 ];
 
@@ -289,14 +349,35 @@ export type Project = {
   link?: string;
   linkLabel?: string;
   image?: string; // app icon / logo (for Play Store apps)
+  icon?: string;
   featured?: boolean;
-  // "solo" = built independently by me. "team" = built with the Tryeno team.
+  // "solo" = freelance / independent projects. "team" = built with the Tryeno team.
   mode: "solo" | "team";
   roleLabel: string;
-  status?: "live" | "upcoming";
+  status?: "live" | "upcoming" | "in-progress" | "testing";
 };
 
 export const projects: Project[] = [
+  {
+    name: "Parva",
+    category: "Mobile · Enterprise Fleet Ecosystem (In Dev)",
+    description:
+      "A complete enterprise Lorry Fleet Management Ecosystem built for Apex Fleet & Logistics. Features two independent Flutter apps: a 13-module Fleet Admin suite and an Offline-First Driver Terminal with local UUID queue, auto-sync, and automated fuel calculation.",
+    highlights: [
+      "Dual Flutter Apps: Admin Mobile (13 modules) + Driver Terminal (10 screens)",
+      "Offline-First architecture with local UUID queue & auto cloud synchronization",
+      "Dynamic trip ledger, automated fuel calculation & mileage formulas",
+      "Vehicles, drivers, maintenance, inventory, compliance & audit trail",
+    ],
+    tech: ["Flutter", "Dart", "Material 3", "Android", "Offline-First", "REST API"],
+    accent: "from-blue-600 to-indigo-600",
+    image: "/parva-icon.png",
+    featured: true,
+    mode: "solo",
+    roleLabel: "Freelance Project",
+    status: "in-progress",
+    icon: "🚛",
+  },
   {
     name: "Siddhivinayak Recovery",
     category: "Web · Business Website (Live)",
@@ -313,7 +394,7 @@ export const projects: Project[] = [
     link: "https://siddhivinayakrecovery.com",
     featured: true,
     mode: "solo",
-    roleLabel: "Designed & built solo",
+    roleLabel: "Freelance Project",
   },
   {
     name: "KP Industries",
@@ -331,7 +412,7 @@ export const projects: Project[] = [
     link: "https://www.kpind.co.in",
     featured: true,
     mode: "solo",
-    roleLabel: "Designed & built solo",
+    roleLabel: "Freelance Project",
   },
   {
     name: "ShopNest",
@@ -421,25 +502,28 @@ export const projects: Project[] = [
     link: "https://www.fiscora.co.in",
     featured: true,
     mode: "solo",
-    roleLabel: "Designed & built solo",
+    roleLabel: "Freelance Project",
   },
   {
     name: "MyDigi",
-    category: "Mobile · Asset & Warranty Manager (Upcoming)",
+    category: "Mobile & Web · Asset & Warranty Hub",
     description:
-      "All-in-one Smart Product, Warranty, Expense, Service & Invoice Vault mobile application with AI Invoice OCR camera scanning. Launching soon exclusively on the Google Play Store.",
+      "All-in-one Smart Product, Warranty, Expense, Service & Invoice Vault ecosystem with AI OCR camera scanning. Official marketing website is live at mydigi.co.in, and the Flutter Android mobile application is currently in closed testing on Google Play.",
     highlights: [
-      "AI Invoice OCR camera scanner",
-      "7-day urgent warranty expiry alerts",
-      "Total Cost of Ownership (TCO) & QR Passports",
-      "Encrypted invoice & warranty vault",
+      "Official website live at mydigi.co.in",
+      "Flutter mobile app in active Closed Testing",
+      "AI Invoice OCR camera scanner & proactive expiry alerts",
+      "Total Cost of Ownership (TCO) & encrypted warranty vault",
     ],
-    tech: ["Flutter", "Dart", "Material 3", "AI OCR", "Google Play"],
+    tech: ["Flutter", "Dart", "Material 3", "AI OCR", "Google Play (Testing)"],
     accent: "from-indigo-500 to-cyan-500",
+    link: "https://mydigi.co.in",
+    linkLabel: "Visit Live Website",
+    image: "/mydigi-icon.png",
     featured: true,
     mode: "solo",
-    roleLabel: "Built Solo · Launching Soon",
-    status: "upcoming",
+    roleLabel: "Freelance Project",
+    status: "testing",
   },
 ];
 

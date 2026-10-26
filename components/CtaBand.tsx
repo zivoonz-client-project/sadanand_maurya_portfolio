@@ -24,11 +24,11 @@ export default function CtaBand({
                 </span>
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-muted">{subtitle}</p>
-              <div className="mt-7 flex flex-wrap justify-center gap-3">
-                <Link href="/contact" className="btn-primary">
+              <div className="mt-7 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+                <Link href="/contact" className="btn-primary w-full sm:w-auto">
                   Start a Project →
                 </Link>
-                <Link href="/projects" className="btn-ghost">
+                <Link href="/projects" className="btn-ghost w-full sm:w-auto">
                   See My Work
                 </Link>
               </div>

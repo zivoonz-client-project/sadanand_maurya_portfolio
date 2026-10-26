@@ -31,6 +31,7 @@ export default function TiltCard({
   const spotlight = useMotionTemplate`radial-gradient(220px circle at ${mx}% ${my}%, rgba(129,140,248,0.16), transparent 70%)`;
 
   const handleMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "touch") return;
     const el = e.currentTarget;
     const rect = el.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width;

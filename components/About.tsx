@@ -38,6 +38,26 @@ export default function About() {
                   ))}
                 </div>
               </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-border pt-6">
+                <a
+                  href="/Sadanand_Maurya_Resume.pdf"
+                  download="Sadanand_Maurya_Resume.pdf"
+                  className="btn-primary inline-flex items-center gap-2 px-4 py-2.5 text-sm"
+                >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                  </svg>
+                  <span>Download Resume (PDF)</span>
+                </a>
+                <a
+                  href="/Sadanand_Maurya_Resume.docx"
+                  download="Sadanand_Maurya_Resume.docx"
+                  className="btn-ghost inline-flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 hover:text-slate-900 border border-slate-300"
+                >
+                  <span>Download (.DOCX)</span>
+                </a>
+              </div>
             </div>
           </Reveal>
 
