@@ -278,6 +278,8 @@ function ProjectCard({ p }: { p: Project }) {
 }
 
 export default function Projects() {
+  // Set to true to show Freelancing / Individual (Solo) projects
+  const showSoloProjects = false;
   const solo = projects.filter((p) => p.mode === "solo");
   const team = projects.filter((p) => p.mode === "team");
 
@@ -290,36 +292,40 @@ export default function Projects() {
             Major <span className="gradient-text">Projects</span>
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Real products I&apos;ve shipped. The websites below were built as
-            freelance client projects end-to-end. The mobile apps and backend systems
-            were developed with the Tryeno team.
+            {showSoloProjects
+              ? "Real products I've shipped. The websites below were built as freelance client projects end-to-end. The mobile apps and backend systems were developed with the Tryeno team."
+              : "Real products I've shipped. Production mobile applications and backend systems developed collaboratively with the Tryeno team."}
           </p>
         </Reveal>
 
-        {/* Freelance */}
-        <Reveal>
-          <div className="mt-10 flex items-center gap-3">
-            <span className="text-2xl">💼</span>
-            <div>
-              <h3 className="text-xl font-bold">Freelancing &amp; Client Projects</h3>
-              <p className="text-sm text-muted">
-                Fully designed, developed &amp; deployed for clients — {solo.length}{" "}
-                projects.
-              </p>
-            </div>
-          </div>
-        </Reveal>
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {solo.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.05}>
-              <ProjectCard p={p} />
+        {showSoloProjects && (
+          <>
+            {/* Freelance / Individual */}
+            <Reveal>
+              <div className="mt-10 flex items-center gap-3">
+                <span className="text-2xl">💼</span>
+                <div>
+                  <h3 className="text-xl font-bold">Freelancing &amp; Client Projects</h3>
+                  <p className="text-sm text-muted">
+                    Fully designed, developed &amp; deployed for clients — {solo.length}{" "}
+                    projects.
+                  </p>
+                </div>
+              </div>
             </Reveal>
-          ))}
-        </div>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {solo.map((p, i) => (
+                <Reveal key={p.name} delay={i * 0.05}>
+                  <ProjectCard p={p} />
+                </Reveal>
+              ))}
+            </div>
+          </>
+        )}
 
         {/* Team */}
         <Reveal>
-          <div className="mt-12 flex items-center gap-3">
+          <div className={`${showSoloProjects ? "mt-12" : "mt-10"} flex items-center gap-3`}>
             <span className="text-2xl">🤝</span>
             <div>
               <h3 className="text-xl font-bold">
