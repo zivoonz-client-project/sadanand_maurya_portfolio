@@ -29,15 +29,6 @@ export default function UpcomingLaunch() {
           <div className="lg:col-span-7">
             <Reveal>
               <div className="flex flex-wrap items-center gap-2.5">
-                <a
-                  href="https://mydigi.co.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 shadow-sm hover:bg-emerald-100 transition"
-                >
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                  Website Live (mydigi.co.in) ↗
-                </a>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-300 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 shadow-sm">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-500 opacity-75" />
@@ -115,25 +106,18 @@ export default function UpcomingLaunch() {
             {/* Launch CTA Bar */}
             <Reveal delay={0.25}>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href="https://mydigi.co.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center gap-2 px-5 py-3 text-sm shadow-md"
-                >
-                  <span>Visit Live Website (mydigi.co.in)</span>
-                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                  </svg>
-                </a>
-
                 <div className="inline-flex items-center gap-2 rounded-xl border border-sky-300 bg-sky-50 px-4 py-3 text-xs font-semibold text-sky-800 shadow-sm">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-500 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-600" />
                   </span>
                   <span>Android App in Closed Testing</span>
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-xs font-semibold text-indigo-700 shadow-sm">
+                  <svg className="h-4 w-4 fill-current text-indigo-600" viewBox="0 0 24 24">
+                    <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.22-.988V2.802c0-.363.078-.7.22-.988zm11.242 11.243l2.257 2.256-11.89 6.865 9.633-9.121zm0-2.114L5.218 1.822l11.89 6.865-2.257 2.256zm1.485 1.057l3.654 2.11a1.238 1.238 0 0 1 0 2.146l-3.654 2.11-2.45-2.45 2.45-2.45z"/>
+                  </svg>
+                  <span>Launching Soon on Google Play</span>
                 </div>
               </div>
             </Reveal>
