@@ -6,7 +6,7 @@ export const profile = {
     "React & Next.js Developer",
   ],
   tagline:
-    "I build scalable mobile & web apps — Flutter, React, Next.js and Laravel — with clean architecture, secure APIs and production-ready deployment.",
+    "I don't just build mobile & web apps — I help businesses transition online, automate operations, and scale revenue with modern, high-converting digital solutions.",
   location: "Varanasi, Uttar Pradesh, India",
   email: "sadanandmaurya.rj@gmail.com",
   phone: "+91 90444 64627",
@@ -31,7 +31,8 @@ export const stats = [
 // Small trust signals shown in the hero.
 export const trustBadges = [
   { icon: "⭐", label: "5.0 client rating" },
-  { icon: "⚡", label: "Replies within a day" },
+  { icon: "🚀", label: "Business growth focused" },
+  { icon: "💡", label: "Free consultation" },
   { icon: "✅", label: "On-time delivery" },
 ];
 
@@ -103,6 +104,17 @@ export const services: Service[] = [
       "Payment & auth systems",
       "Testing & bug fixing",
       "Production deployment & handover",
+    ],
+  },
+  {
+    icon: "💡",
+    title: "Digital Business Consultation",
+    tagline: "Free strategic guidance to take your business online & scale.",
+    points: [
+      "Custom digital roadmap & tech stack selection",
+      "Offline-to-online business transformation plan",
+      "Conversion-focused UI/UX & sales funnels",
+      "Cost-effective architecture & MVP scoping",
     ],
   },
 ];

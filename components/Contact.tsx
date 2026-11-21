@@ -64,6 +64,7 @@ const contactItems = [
 ];
 
 const projectTypes = [
+  "Business Consultation / Digital Growth",
   "Mobile App (Flutter)",
   "Website / Web App",
   "Backend / API",
@@ -157,17 +158,15 @@ export default function Contact() {
     <section id="contact" className="pt-24 pb-16 sm:pt-32 sm:pb-24">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Contact"
+          eyebrow="Contact & Consultation"
           title={
             <>
-              Let&apos;s build something{" "}
-              <span className="gradient-text">great together</span>
+              Let&apos;s grow your business{" "}
+              <span className="gradient-text">online together</span>
             </>
           }
         >
-          Have a project in mind or a role to fill? Tell me a bit about it and
-          I&apos;ll get back to you within a day. I&apos;m open to freelance work
-          and full-time opportunities.
+          Have a project in mind, need business consultation, or want to take your business online? Tell me about your goals and get the best digital solution and roadmap. Available for freelance projects, digital consultation, and full-time roles.
         </SectionHeading>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">

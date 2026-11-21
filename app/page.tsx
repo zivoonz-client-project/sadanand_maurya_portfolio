@@ -5,6 +5,7 @@ import TiltCard from "@/components/TiltCard";
 import SectionHeading from "@/components/SectionHeading";
 import TechMarquee from "@/components/TechMarquee";
 import UpcomingLaunch from "@/components/UpcomingLaunch";
+import BusinessGrowth from "@/components/BusinessGrowth";
 import Services from "@/components/Services";
 import AiEdge from "@/components/AiEdge";
 import Process from "@/components/Process";
@@ -42,6 +43,7 @@ export default function Home() {
       <Hero />
       <TechMarquee />
       <UpcomingLaunch />
+      <BusinessGrowth />
       <Services />
       <AiEdge />
       <Process />
