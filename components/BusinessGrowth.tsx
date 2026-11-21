@@ -11,7 +11,7 @@ const pillars = [
     icon: "🌐",
     title: "Complete Online Transformation",
     tagline: "Offline to online business migration",
-    desc: "Hum sirf app ya website nahi banate — hum aapke traditional ya local business ko ek modern online ecosystem me convert karte hain taaki aapke customers 24/7 aapko dhundh sakein, trust karein aur direct orders place kar sakein.",
+    desc: "Taking your offline or local business into a modern digital ecosystem. We build fast web and mobile platforms so customers can discover you 24/7, trust your brand, and place direct orders effortlessly.",
     badge: "Business Growth",
     accent: "from-blue-600 to-indigo-600",
   },
@@ -19,15 +19,15 @@ const pillars = [
     icon: "📈",
     title: "Designed to Convert & Scale Sales",
     tagline: "High-converting UI/UX & fast checkout",
-    desc: "Ek sundar design tabhi faydemand hai jab wo sales laye. Har website aur app business conversion ke liye engineer ki jaati hai: fast loading speeds, seamless payment gateway integrations, aur smooth user journey.",
+    desc: "A great design only matters if it drives real sales. Every website and app is engineered for measurable conversions: lightning-fast load speeds, automated payment gateways, and friction-free user journeys.",
     badge: "Revenue Focused",
     accent: "from-emerald-500 to-teal-600",
   },
   {
     icon: "💡",
     title: "Free Digital Business Consultation",
-    tagline: "Sahi digital roadmap aur strategy",
-    desc: "Aapka business kaisa hai aur kaunsa digital solution sabse beneficial hoga? Hamse consult karein — hum bina kisi upfront fee ke aapko practical guidance, cost-effective tech stack aur complete growth strategy denge.",
+    tagline: "Strategic roadmap & tech selection",
+    desc: "Wondering what digital solution best fits your business model and budget? Schedule a consultation — get actionable guidance, the right tech stack, and a clear growth roadmap with zero upfront fee.",
     badge: "Free Consultation",
     accent: "from-amber-500 to-orange-600",
   },
@@ -35,7 +35,7 @@ const pillars = [
     icon: "🤝",
     title: "100% Code Ownership & Lifetime Support",
     tagline: "Transparent partnership with zero lock-in",
-    desc: "Pura source code, domain, hosting aur database credentials 100% aapke naam par deliver hote hain. No vendor lock-in, direct WhatsApp communication aur launch ke baad dedicated post-launch support.",
+    desc: "Complete source code, domain, hosting, and database credentials are handed over 100% under your ownership. Zero vendor lock-in, direct communication, and dedicated post-launch support.",
     badge: "Full Ownership",
     accent: "from-purple-600 to-violet-600",
   },
@@ -64,7 +64,7 @@ export default function BusinessGrowth() {
           }
           align="center"
         >
-          Ham sirf website ya mobile app nahi banate — hum aapke business ko online le jane, naye customers jodane aur revenue scale karne me help karte hain. Business consultation ke liye sampark karein, hum aapko best digital solution denge.
+          I don&apos;t just build websites or mobile applications — I help businesses transition online, acquire new customers, and scale revenue. Connect today for a free strategic consultation and get the ideal digital roadmap for your business.
         </SectionHeading>
 
         {/* 4 Pillars Grid */}
@@ -115,12 +115,12 @@ export default function BusinessGrowth() {
                 </div>
 
                 <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                  Apne business ko online le jana chahte hain?{" "}
+                  Looking to bring your business online?{" "}
                   <span className="gradient-text">Let&apos;s talk today.</span>
                 </h3>
 
                 <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-600">
-                  Chahe aapka idea abhi raw ho ya aap existing business ko digitize karna chahte hon — hum aapko best technology, timeline aur budget plan recommend karenge. <strong>Koi upfront commitment nahi, sirf practical business guidance.</strong>
+                  Whether you have a raw concept or want to digitize an existing business — I will recommend the most effective technology, timeline, and budget. <strong>No upfront commitment — just practical, results-driven business guidance.</strong>
                 </p>
               </div>
 

@@ -4,7 +4,7 @@ import { profile } from "@/lib/data";
 
 export default function CtaBand({
   title = "Ready to grow your business online?",
-  subtitle = "Hum sirf website ya app nahi banate — hum aapke business ko online le jane aur scale karne me help karte hain. Contact us today for a free consultation.",
+  subtitle = "I don't just build websites or apps — I help businesses establish an online presence, streamline operations, and scale revenue. Contact me today for a free consultation.",
 }: {
   title?: string;
   subtitle?: string;
